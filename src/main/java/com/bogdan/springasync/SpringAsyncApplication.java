@@ -13,15 +13,14 @@ import java.util.concurrent.Executor;
 public class SpringAsyncApplication {
 
   public static void main(String[] args) {
-    // close the application context to shut down the custom ExecutorService
-    SpringApplication.run(SpringAsyncApplication.class, args).close();
+    SpringApplication.run(SpringAsyncApplication.class, args);
   }
 
   @Bean
   public Executor taskExecutor() {
     ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-    executor.setCorePoolSize(10);
-    executor.setMaxPoolSize(10);
+    executor.setCorePoolSize(3);
+    executor.setMaxPoolSize(3);
     executor.setQueueCapacity(500);
     executor.setThreadNamePrefix("GithubLookup-");
     executor.initialize();
