@@ -2,7 +2,7 @@
 
 Demo of Spring async methods
 
-Example taken from: https://spring.io/guides/gs/async-method/
+Inspired by: https://spring.io/guides/gs/async-method/
 
 # To run the demo
 ```
